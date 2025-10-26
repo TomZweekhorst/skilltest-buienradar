@@ -6,3 +6,5 @@ mysql-connector-python
 matplotlib
 seaborn
 ipython-sql
+sqlalchemy
+prettytable==3.9.0
