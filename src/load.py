@@ -14,7 +14,7 @@ def get_engine():
 
 def load_df_to_sqlite(df: pd.DataFrame, table_name: str, pkey_name: str):
     """
-    Load a DataFrame into an SQLite table.
+    Load a DataFrame into an SQLite table. If the table already exists it is replaced to avoid duplactes
 
     Parameters
     ----------

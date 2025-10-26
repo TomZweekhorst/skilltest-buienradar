@@ -2,8 +2,8 @@ import pandas as pd
 
 def add_primary_key(df: pd.DataFrame, pkey_name: str) -> pd.DataFrame:
     """
-    Extract only the 'actual.stationmeasurements' data from Buienradar JSON feed.
-
+    Add a primary key column to the dataframe
+    
     Parameters
     ----------
     df: pd.DataFrame
@@ -15,7 +15,7 @@ def add_primary_key(df: pd.DataFrame, pkey_name: str) -> pd.DataFrame:
     Returns
     -------
     pd.DataFrame
-        DataFrame containing the weather station measurements.
+        DataFrame including the primary key column.
     """
     if pkey_name not in df:
         df[pkey_name] = df.index + 1
@@ -25,6 +25,22 @@ def add_primary_key(df: pd.DataFrame, pkey_name: str) -> pd.DataFrame:
         raise ValueError("This column name already exists")
 
 def select_columns(df: pd.DataFrame, column_list: list[str]) -> pd.DataFrame:
+    """
+    Select a subset of the columns of the supplied dataframe
+    
+    Parameters
+    ----------
+    df: pd.DataFrame
+        dataframe to add a primary key to
+       
+    column_list: list[str]
+        list of column keys to be selected
+        
+    Returns
+    -------
+    pd.DataFrame
+        DataFrame containing selected columns.
+    """
     
     for name in column_list:
         if name not in df:
