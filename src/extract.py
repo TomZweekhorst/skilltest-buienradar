@@ -10,6 +10,8 @@ def extract_json_to_df(api_url: str, path: list[str]) -> pd.DataFrame:
     ----------
     api_url : str
         URL to the Buienradar API (e.g. https://data.buienradar.nl/2.0/feed/json/actual/stationmeasurements)
+    path: list[str]
+        path to the required josn fields that need to be extracted to the dataframe.
 
     Returns
     -------
